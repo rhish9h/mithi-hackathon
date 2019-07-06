@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+        {% block content %}
+    
+    
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid ml-2 mt-2 col-md-4" style="width: 18rem;">
+            <h5>File name</h5>
+            <h6>{{ ipfile }}</h6>
+        </div>
+    </nav>
+
+    <div class="row container-fluid">
+    <div class="card ml-2 mt-2 col-md-4">
+        <div class="card-body">
+            <h5 class="card-title">Top IPs</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">IP</th>
+                        <th scope="col">Count</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        
+                    {% for i, j in result1%}
+                    <tr>
+                        <td>{{ i }}</td>
+                        <td>{{ j }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </h6>
+        </div>
+    </div>
+    <!-- style="width: 18rem;" -->
+    <div class="card ml-2 mt-2 col-md-4">
+            <div class="card-body">
+                <h5 class="card-title">Top URLs - by hits</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">URL</th>
+                            <th scope="col">Count</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            
+                        {% for i, j in result2%}
+                        <tr>
+                            <td>{{ i }}</td>
+                            <td>{{ j }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </h6>
+            </div>
+        </div>
+
+        <div class="card ml-2 mt-2 col-md-3">
+                <div class="card-body">
+                    <h5 class="card-title">Top HTTP methods</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">Method</th>
+                                <th scope="col">Count</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                
+                            {% for i, j in result4%}
+                            <tr>
+                                <td>{{ i }}</td>
+                                <td>{{ j }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </h6>
+                </div>
+            </div>
+        </div>
+
+<div class="row container-fluid">
+        <div class="card ml-2 mt-2 col-md-3">
+                <div class="card-body">
+                    <h5 class="card-title">Top Content Types</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">Content Type</th>
+                                <th scope="col">Count</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                
+                            {% for i, j in result5%}
+                            <tr>
+                                <td>{{ i }}</td>
+                                <td>{{ j }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </h6>
+                </div>
+            </div>
+
+        <div class="card ml-2 mt-2 col-md-4">
+                <div class="card-body">
+                    <h5 class="card-title">Top URLs by size</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">URLs</th>
+                                <th scope="col">Size</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                
+                            {% for i, j in result3%}
+                            <tr>
+                                <td>{{ i }}</td>
+                                <td>{{ j }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </h6>
+                </div>
+            </div>
+
+            <div class="card ml-2 mt-2 col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Data transferred</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Downloads</th>
+                                    <th scope="col">Uploads</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                
+                                <tr>
+                                    {% for i in result7 %}
+                                    <td>{{ i }}</td>
+                                    {% endfor %}
+                                </tr>
+                                <!-- <center>{{ totTrans }}</center> -->
+                                </tbody>
+                            </table>
+                        </h6>
+                    </div>
+                </div>
+        </div>
+
+    {% endblock %}
+</body>
+</html>
